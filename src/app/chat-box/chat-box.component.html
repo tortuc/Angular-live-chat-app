@@ -1,0 +1,19 @@
+<div class="chat-box" *ngIf="selectedContact;else defaultContact">
+  <div *ngFor="let message of selectedContact.messages">
+    <app-sent-message [message]="message" *ngIf="!message.isSender; else bySender"></app-sent-message>
+    <ng-template #bySender>
+      <app-received-message [message]="message"></app-received-message>
+    </ng-template>
+  </div>
+</div>
+
+<ng-template #defaultContact>
+  <div class="chat-box">
+    <div *ngFor="let message of defaultSelectedContact.messages">
+      <app-sent-message [message]="message" *ngIf="!message.isSender; else bySender"></app-sent-message>
+      <ng-template #bySender>
+        <app-received-message [message]="message"></app-received-message>
+      </ng-template>
+    </div>
+  </div>
+</ng-template>

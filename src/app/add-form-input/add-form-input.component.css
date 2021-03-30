@@ -1,0 +1,32 @@
+.add-form-input-container {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+}
+.send-button {
+  display: none;
+}
+.send-icon {
+  color: #5cbeb3!important;
+  font-size: 30px;
+}
+.send-icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+@media only screen and (min-width: 786px) {
+  .send-button {
+    display: block;
+    color: white;
+    background-color: #5cbeb3;
+    height: 40px;
+    padding: 0px 30px;
+    border-radius: 5px;
+    border: none;
+  }
+  .send-icon-container {
+    display: none!important;
+  }
+}

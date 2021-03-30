@@ -1,0 +1,82 @@
+li{
+  display: flex;
+  background-color: #f7f7f7;
+   padding: 10px;
+}
+.contact-item-image-and-online-state-container {
+  flex: 1;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.contact-item-image-and-online-state {
+  width: 47px;
+  height: 47px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.online-state-circle {
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  position: absolute;
+  left: 1.5px;
+  top: 6px;
+  background-color: #db6271;
+}
+.contact-item-image {
+  border-radius: 20px;
+  height: 40px;
+  width: 40px;
+}
+.contact-text-data-container {
+  padding: 10px 10px 10px 0; flex: 5;
+}
+.contact-item-date-container {
+  color: #939496;
+  font-size: 12px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.contact-name-last-message-unread-data-container {
+  display: flex;
+}
+.contact-name-and-last-message-container {
+  flex: 7;
+}
+.contact-name {
+  color: #606060;
+}
+.last-meesage-text {
+  /* color: #5cbeb3; */
+  font-size: 12px;
+  color: #949495;
+}
+
+.un-read-messages-count-container {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.un-read-messages-count {
+  color: white;
+  background-color: #f15249;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+}
+
+@media only screen and (min-width: 786px) {
+  li{
+    margin-left: -20px;
+  }
+}

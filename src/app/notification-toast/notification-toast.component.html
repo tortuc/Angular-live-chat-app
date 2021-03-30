@@ -1,0 +1,15 @@
+<div *ngIf="notification" [@flyInOut]="'in'" class="toast">
+  <div class="notification-icon-container">
+    <div class="icon-item-circle-container">
+      <i class="material-icons icon-item">sms</i>
+    </div>
+  </div>
+  <div class="notification-name-and-message">
+    <div class="">
+      {{notification.name}}
+    </div>
+    <div class="">
+      {{notification.message | summary}}
+    </div>
+  </div>
+</div>

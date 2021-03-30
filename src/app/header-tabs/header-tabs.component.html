@@ -1,0 +1,17 @@
+<div class="contacts-header-icons-container">
+  <div class="icon-item-tab"
+       (click)="onSmsIconClicked()"
+       [class.active]="activeTab == 'sms'">
+
+    <i class="material-icons icon-item" [class.active-icon]="activeTab == 'sms'">sms</i>
+  </div>
+  <div class="icon-item-tab">
+    <i class="material-icons icon-item">person</i>
+  </div>
+  <div class="icon-item-tab"
+       (click)="onSearchIconClicked()"
+       [class.active]="activeTab == 'search'">
+
+    <i class="material-icons icon-item" [class.active-icon]="activeTab == 'search'">search</i>
+  </div>
+</div>

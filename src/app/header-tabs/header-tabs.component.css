@@ -1,0 +1,36 @@
+.contacts-header-icons-container {
+  display: flex;
+  flex: 1;
+  background-color: #e6e7e7;
+}
+
+.icon-item-tab {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border: 1px solid #dfe2e2;
+  background-color: #e6e7e7;
+}
+
+.icon-item-tab:hover {
+  background-color: #5cbeb3;
+  border: none;
+}
+.icon-item {
+  font-size: 30px;
+  color: #939495;
+}
+
+.icon-item:hover {
+  color: white;
+}
+
+.active {
+  background-color: #5cbeb3;
+  border: none;
+}
+.active-icon {
+  color: white;
+}

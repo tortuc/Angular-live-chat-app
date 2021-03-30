@@ -1,0 +1,13 @@
+<div class="profile-header-container">
+  <div class="image-and-name" *ngIf="selectedContact; else defaultContact">
+    <img [src]="selectedContact.image" alt="profile-image" width="30px" height="30px" style="border-radius: 15px;"> <span style="margin-left: 10px">CHAT WITH {{selectedContact.name | uppercase}}</span>
+  </div>
+  <ng-template #defaultContact>
+    <div class="image-and-name">
+      <img [src]="defaultSelectedContact.image" alt="profile-image" width="30px" height="30px" style="border-radius: 15px;"> <span style="margin-left: 10px">CHAT WITH {{defaultSelectedContact.name | uppercase}}</span>
+    </div>
+  </ng-template>
+  <div class="setting-icon">
+    <i class="material-icons" style="font-size: 30px; color: #939495;">settings</i>
+  </div>
+</div>

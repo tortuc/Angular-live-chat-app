@@ -1,0 +1,81 @@
+<!-- root component -->
+
+<div class="app">
+
+  <!-- Mobile design header -->
+  <div class="mobile-header">
+    <div class="header-tabs">
+      <app-header-tabs [activeTab]="activeTab"
+                       (onClickSmsIcon)='onClickSmsIcon($event)'
+                       (onClickSearchIcon)='onClickSearchIcon($event)'>
+      </app-header-tabs>
+    </div>
+    <div class="profile-header" *ngIf="activeTab == 'chat-box'">
+      <app-profile-header [selectedContact]="selectedContact"
+                          [defaultSelectedContact]="defaultSelectedContact">
+      </app-profile-header>
+    </div>
+  </div>
+ <!-- desktop-header design -->
+  <div class="desktop-header">
+    <div class="header-tabs">
+      <app-header-tabs [activeTab]="activeTab"
+                       (onClickSmsIcon)='onClickSmsIcon($event)'
+                       (onClickSearchIcon)='onClickSearchIcon($event)'>
+      </app-header-tabs>
+    </div>
+    <div class="profile-header">
+      <app-profile-header [selectedContact]="selectedContact"
+                          [defaultSelectedContact]="defaultSelectedContact">
+      </app-profile-header>
+    </div>
+  </div>
+  <!-- mobile state condition which help in chooseing view chat box or contact-list by clicking on sms tab
+   it navigate to contacts list on click contact it navigate to chat box -->
+
+  <div class="mobile-contact-chat-box">
+    <div class="contact-list scrollable-container"
+         *ngIf="activeTab == 'sms' || activeTab == 'search' ;else activeChatBox">
+      <app-contacts-list [defaultSelectedContact]="defaultSelectedContact"
+                         [activeTab]="activeTab"
+                         class="scrollable"
+                         [contacts]="contacts"
+                         (onSelect)='onSelect($event)'
+                         [selectedContact]="selectedContact">
+      </app-contacts-list>
+    </div>
+    <ng-template #activeChatBox>
+      <div class="chat-box scrollable-container">
+        <app-chat-box class="scrollable"
+                      [selectedContact]="selectedContact"
+                      [defaultSelectedContact]="defaultSelectedContact">
+        </app-chat-box>
+        <app-add-form-input [message]="message"
+                            (onSendMessage)="onSendMessage($event)">
+        </app-add-form-input>
+      </div>
+    </ng-template>
+
+  </div>
+
+  <div class="desktop-contact-chat-box">
+    <div class="contact-list scrollable-container">
+      <app-contacts-list [defaultSelectedContact]="defaultSelectedContact"
+                          [activeTab]="activeTab"
+                          class="scrollable" [contacts]="contacts"
+                          (onSelect)='onSelect($event)'
+                          [selectedContact]="selectedContact">
+      </app-contacts-list>
+    </div>
+    <div class="chat-box scrollable-container">
+      <app-chat-box class="scrollable"
+                    [selectedContact]="selectedContact"
+                    [defaultSelectedContact]="defaultSelectedContact">
+      </app-chat-box>
+      <app-add-form-input  [message]="message" (onSendMessage)="onSendMessage($event)"></app-add-form-input>
+    </div>
+  </div>
+
+  <app-notification-toast [notification]="notification"></app-notification-toast>
+
+</div>

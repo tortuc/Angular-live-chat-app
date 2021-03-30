@@ -1,0 +1,21 @@
+.contact-list {
+  flex: 1;
+  height: 100%;
+  padding-top: 50px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.search-input-container {
+  display: flex;
+  justify-content: center;
+}
+
+@media only screen and (min-width: 786px) {
+  .search-input-container {
+    display: block;
+  }
+}
